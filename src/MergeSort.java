@@ -1,2 +1,2 @@
-public class MergeSort implements SortingAlgorithm{
+public class MergeSort{
 }

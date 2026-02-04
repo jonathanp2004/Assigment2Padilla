@@ -1,2 +1,4 @@
-public class QuickSort implements SortingAlgorithm{
+public class QuickSort {
+
+
 }

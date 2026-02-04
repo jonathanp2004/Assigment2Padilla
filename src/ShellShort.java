@@ -1,2 +1,2 @@
-public class ShellShort implements SortingAlgorithm{
+public class ShellShort {
 }

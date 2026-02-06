@@ -24,7 +24,7 @@ public class SelectionSort  implements SortingAlgorithm{
 
         arr[i] = arr[index];// set the value of i to the value of our min index
 
-        arr[i] = temp; // set the value of our
+        arr[index] = temp; // set the value of our
 
     }
 

@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class QuickSort {
+public class QuickSort  implements SortingAlgorithm{
 
 
     //should rearrange so all i < pivot to left and pivot, and if i > pivot should be put on the left

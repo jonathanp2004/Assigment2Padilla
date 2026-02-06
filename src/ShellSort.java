@@ -1,8 +1,8 @@
 import java.util.Arrays;
 
-public class ShellSort {
+public class ShellSort implements SortingAlgorithm {
 
-    private int[] sorty(int[] input){
+    public int[] sorty(int[] input){
 
 
 

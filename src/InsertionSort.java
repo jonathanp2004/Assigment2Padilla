@@ -1,8 +1,8 @@
 import java.util.Arrays;
 
-public class InsertionSort {
+public class InsertionSort implements SortingAlgorithm {
 
-    public int[] sort(int[] input){
+    public int[] sorty(int[] input){
 
         for (int i = 1; i < input.length ; i++) {
             int temp = input[i];
@@ -23,7 +23,7 @@ public class InsertionSort {
 
         int[] test1 = {9,35,7,2,5};
 
-        System.out.println(Arrays.toString(insertionSort.sort(test1)));
+        System.out.println(Arrays.toString(insertionSort.sorty(test1)));
 
     }
 

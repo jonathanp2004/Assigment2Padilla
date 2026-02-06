@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class SelectionSort {
+public class SelectionSort  implements SortingAlgorithm{
 
 
     public int[] sorty(int[] input){

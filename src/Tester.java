@@ -11,40 +11,44 @@ public class Tester {
         algorithm = sa;
     }
 
-    public double singleTest(int size){
-
-        Random gen = new Random();
+    public double singleTest(int size, boolean useKSorted){
         int[] arr = new int[size];
+        if(useKSorted){
+            {
+                Performance.generateKSorted(arr);
+            }
+            }else {
+            Random gen = new Random();
+            for (int i = 0; i < arr.length; i++) {
+                arr[i] = gen.nextInt();
 
-        for (int i = 0; i < arr.length; i++) {
-
-            arr[i] = gen.nextInt(11);
+            }
 
         }
         long startTime = System.nanoTime();
         algorithm.sorty(arr);
         long endTime = System.nanoTime();
 
-       long duration = endTime  - startTime;
+        long duration = endTime - startTime;
 
-       return duration/1000000.0;
+        return duration / 1000000.0;
+
     }
 
 
-    public void test (int iterations , int size){
+    public double test (int iterations , int size, boolean useKSorted) {
 
         double total = 0;
 
 
         for (int i = 0; i < iterations; i++) {
-            double dura = singleTest(size);
+            double dura = singleTest(size, useKSorted);
             total = dura + total;
         }
 
-        System.out.println("Average time to sort array :" + total/iterations);
+        return total / iterations;
 
+        }
     }
 
 
-
-}

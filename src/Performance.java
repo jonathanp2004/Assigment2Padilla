@@ -28,10 +28,10 @@ public class Performance {
 
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         try {
-            FileWriter writer = new FileWriter("report.txt");
+            FileWriter writer = new FileWriter("RandomReport.txt");
 
             SortingAlgorithm[] algorithms = {
                     new BubbleSort(),
@@ -42,19 +42,36 @@ public class Performance {
                     new MergeSort()};
 
             int[] sizes = {100, 500, 1000, 2000, 5000, 10000, 20000, 75000, 150000};
-
+            writer.write("\n------ Random Data ------\n");
             for (SortingAlgorithm algorithm : algorithms) {
                 writer.write("SortingAlgorithm -" + algorithm.getClass().getSimpleName()+ "\n");
                 for (int size : sizes) {
 
                     Tester testing = new Tester(algorithm);
-                    writer.write("Sorted " + size + " in " + testing.test(20, size,true) + "ms (avg)\n");
+                    writer.write("Sorted " + size + " in " + testing.test(20, size,false) + "ms (avg)\n");
                     writer.write("");
 
                 }
             }
             writer.close();
-        } catch (IOException e) {
+
+            FileWriter writer2 = new FileWriter("KSortedReport.txt");
+            writer2.write("\n------ K Sorted Data ------\n");
+            for (SortingAlgorithm algorithm : algorithms) {
+                writer2.write("SortingAlgorithm -" + algorithm.getClass().getSimpleName()+ "\n");
+                for (int size : sizes) {
+
+                    Tester testing = new Tester(algorithm);
+                    writer2.write("Sorted " + size + " in " + testing.test(20, size,true) + "ms (avg)\n");
+                    writer2.write("");
+
+                }
+            }
+            writer2.close();
+        }
+
+
+        catch (IOException e) {
             throw new RuntimeException(e);
         }
 
